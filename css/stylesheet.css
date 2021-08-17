@@ -1,0 +1,39 @@
+img.avatar {
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.userName {
+  margin-bottom: 10px;
+  text-align: -webkit-right;
+}
+.passWord {
+  text-align: -webkit-right;
+  margin-bottom: 10px;
+  font:inherit;
+}
+button {
+  margin-left: 100px;
+  margin-bottom: 10px;
+}
+span.psw {
+  color: black;
+}
+label {
+  text-align-last: center;
+  color:black;
+}
+.w3-display-middle {
+  color: black;
+}
+.w3-display-topleft.w3-padding-large.w3-xlarge {
+  color: black;
+}
+.signBtn {
+  text-align: -webkit-center;
+}
+.passwordFld {
+  margin-right: 35px;
+}
+.rptPsw {
+  margin-right: 50px;
+}
