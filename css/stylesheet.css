@@ -35,5 +35,14 @@ label {
   margin-right: 35px;
 }
 .rptPsw {
-  margin-right: 50px;
+  margin-right: 105px;
+}
+.forgot {
+  padding-top: 750px;
+  margin-left: 400px;
+  margin-right: 400px;
+  text-align: -webkit-center;
+}
+.forgotBtns {
+  text-align: -webkit-center;
 }

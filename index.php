@@ -36,7 +36,7 @@ body, html {height: 100%}
   </div>
   <div class="passWord">
     <label for="passWord"><h4><b>Password:</b></h4></label>
-    <input type="password" placeholder="Enter Password" name="passWord">
+    <input type="password" placeholder="Enter Password" name="psw">
   </div>
   <div>   
     <button type="submit" name="login">Login</button>
@@ -46,6 +46,12 @@ body, html {height: 100%}
   <form action="update.php" method="post">
   <button type="submit" name="signUpbtn">Sign Up</button>
   </div>
+  </form>
+      <form action="forgot.php" method="post">
+        <div class="forgot">
+          <button type="submit">Forgot Password?</button>
+        </div>
+      </form>
   </div>
 </form>
 </div>
@@ -54,21 +60,11 @@ body, html {height: 100%}
 </html>
 <?php } else {
   $userName = $_POST["userName"];
-  $passWord = $_POST["passWord"];
+  $passWord = $_POST["psw"];
 }
 ?>
 <?php
 if ( isset( $_POST['signUpbtn'] ) ) {
- echo "hello";
  $_SESSION['signUpbtn'] = $_POST['signUpbtn'];
-}
-?>
-<?php
-if ($userName == "dave@123.com" && $passWord == "1234"){
-
-  echo "<h3>Hello $userName</h3><div>";
-
-}else{
-  echo "invalid user or password.";
 }
 ?>
