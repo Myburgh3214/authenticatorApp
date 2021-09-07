@@ -33,12 +33,12 @@
 if ( isset( $_POST['submitSearch'] ) ) {
 
     $searchDb = $_POST["searchDb"];
-    $sqlTarget = "SELECT Email FROM users WHERE Email = '$searchDb' ";
+    $sqlTarget = "SELECT email FROM users WHERE email = '$searchDb' ";
     $result = $conn->query($sqlTarget);
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            echo "id: " . $row["Email"]."<br>";
+            echo "id: " . $row["email"]."<br>";
         }
     } else {
       echo "0 results";

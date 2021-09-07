@@ -14,8 +14,6 @@
       <input type="text" name="email">
       <label>Password:</label>
       <input type="text" name="password">
-      <label>Username/ID:</label>
-      <input type="text" name="userName">
       <input type="submit" value="Submit" name="submitBtn">
     </form>
 
@@ -24,7 +22,7 @@
   if (isset($_POST["submitBtn"])){
     $email = $_POST["email"];
     $passWord = $_POST["password"];
-    $userName = $_POST["userName"];
+
     ///echo $email;
     echo "<br>";
     echo gettype(implode(" ",$email));
@@ -36,7 +34,7 @@
       die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO users (Email, Password, ID) VALUES ('$email', '$passWord', '$userName')";
+    $sql = "INSERT INTO users (email, password) VALUES ('$email', '$passWord')";
      $conn->query($sql); 
     
   }

@@ -1,5 +1,5 @@
 <?php
-  include ("include connect.php")
+  include ("connect.php")
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,7 +27,7 @@ body, html {height: 100%}
 <div class="w3-display-middle" name="hidden">
   <h2><b>Login Form:</b></h2>
   
-<form action="signIn.php" method="POST">
+<form action="index.php" method="POST">
 <div class="imgcontainer">
   <img src="images/avatar.jpg" alt="Avatar" class="avatar">
 </div>
@@ -35,7 +35,7 @@ body, html {height: 100%}
   <div class="container">
   <div class="userName">
     <label for="userName"><h4><b>Username:</b></h4></label>
-    <input type="text" placeholder="Enter Username" name="userName">
+    <input type="text" placeholder="Enter Email" name="email">
   </div>
   <div class="passWord">
     <label for="passWord"><h4><b>Password:</b></h4></label>
@@ -62,21 +62,27 @@ if ( isset( $_POST['signUpbtn'] ) ) {
 }
 ?>
 <?php
-  if ( isset( $_POST['login'] ) ) {
-   $userName = $_POST["userName"];
-   $password = $_POST["psw"];
+  if ( isset( $_POST['login'] ) ) { 
 
 
-    $mySql = "SELECT Email FROM users WHERE Email = '$userName' and Password = '$password'";
-    
-    if ($userName == "cornellmyburgh@outlook.com"){
 
-      echo "invalid user";
+    $email = $_POST["email"];
+    $loginPassword = $_POST["psw"];
 
-    }else {
-      echo "Welcome $userName";
+    $sqlTargets = "SELECT Email FROM users WHERE Email = '$email' AND Password = '$loginPassword' ";
+    $result = $conn->query($sqlTargets);
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+          header("Location: signin.php");
+          exit();
+        }
+    } else {
+      echo "Invalid user or password";
+    }
+    $conn->close();
     }
   
-  }
+  
 
 ?>
