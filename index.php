@@ -1,3 +1,6 @@
+<?php
+  include ("include connect.php")
+?>
 <!DOCTYPE html>
 <html>
 <title>Library-login</title>
@@ -23,8 +26,8 @@ body, html {height: 100%}
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
 <div class="w3-display-middle" name="hidden">
   <h2><b>Login Form:</b></h2>
-  <?php if (!$_POST) { ?>
-<form action="index.php" method="post">
+  
+<form action="signIn.php" method="POST">
 <div class="imgcontainer">
   <img src="images/avatar.jpg" alt="Avatar" class="avatar">
 </div>
@@ -42,29 +45,38 @@ body, html {height: 100%}
     <button type="submit" name="login">Login</button>
   </div>
   </form>
-  </div class="signUp">
-  <form action="update.php" method="post">
-  <button type="submit" name="signUpbtn">Sign Up</button>
-  </div>
+  <form action="forgot.php" method="POST">
+    <button type="submit">Forgot Password</button>
   </form>
-      <form action="forgot.php" method="post">
-        <div class="forgot">
-          <button type="submit">Forgot Password?</button>
-        </div>
-      </form>
-  </div>
-</form>
+  <form action="update.php" method="POST">
+    <button type="submit">Sign Up</button>
+  </form>
+  
 </div>
 </div>
 </body>
 </html>
-<?php } else {
-  $userName = $_POST["userName"];
-  $passWord = $_POST["psw"];
-}
-?>
 <?php
 if ( isset( $_POST['signUpbtn'] ) ) {
  $_SESSION['signUpbtn'] = $_POST['signUpbtn'];
 }
+?>
+<?php
+  if ( isset( $_POST['login'] ) ) {
+   $userName = $_POST["userName"];
+   $password = $_POST["psw"];
+
+
+    $mySql = "SELECT Email FROM users WHERE Email = '$userName' and Password = '$password'";
+    
+    if ($userName == "cornellmyburgh@outlook.com"){
+
+      echo "invalid user";
+
+    }else {
+      echo "Welcome $userName";
+    }
+  
+  }
+
 ?>
