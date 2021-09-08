@@ -83,6 +83,9 @@ if ( isset( $_POST['signUpbtn'] ) ) {
     $conn->close();
     }
   
-  
+    session_start(); 
+    $_SESSION["email"] = "$email";
+    $_SESSION["psw"] = "$loginPassword";
+
 
 ?>

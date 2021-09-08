@@ -15,14 +15,14 @@
   }
 </style>
 
-<form action="connect.php" method="POST">
+<form action="forgot.php" method="POST">
   <div class="container">
       <h1><b>Forgot Password?</b></h1>
       <h2><b>Please fill in this form to reset your password.</b></h2>
     <br>
     <div>
       <label for="email"><h4><b>Email:</b></label>
-      <input type="text" placeholder="Enter Email" name="password" required><h4>
+      <input type="text" placeholder="Enter Email" name="reset" required><h4>
     </div>
     <div class="passwordFld">
     <label for="psw"><h4><b>Password:</b></label>
@@ -30,7 +30,7 @@
     </div>
     <div class="rptPsw">
       <label for="psw-repeat"><h4><b>Confirm Password:</b></label>
-      <input type="password" placeholder="Confirm Password" name="password" required></h4>
+      <input type="password" placeholder="Confirm Password" name="confirm" required></h4>
   </div>
   </div>
 <div class="forgotBtns">
@@ -38,22 +38,25 @@
       <button type="submit" class="cancelbtn">Cancel</button>
   </div>
   <div>
-      <button type="submit" class="signupbtn">Confirm</button>
+      <button type="submit" name="forgotBtn" class="signupbtn">Confirm</button>
   </div>
     </div>
 </form>
 <?php
-session_start();
-$id = $_SESSION["id"];/* userid of the user */
-$con = mysqli_connect('localhost','root','','root') or die('Unable To connect');
-if(count($_POST)>0) {
-$result = mysqli_query($con,"SELECT Emails FROM users WHERE name='" . $id . "'");
-$row=mysqli_fetch_array($result);
-if($_POST["currentPassword"] == $row["password"] && $_POST["newPassword"] == $row["password"] ) {
-mysqli_query($con,"UPDATE users set password='" . $_POST["password"] . "' WHERE name='" . $id . "'");
-$message = "Password Changed Sucessfully";
-} else{
- $message = "Password is not correct";
-}
+if ( isset( $_POST['forgotBtn'] ) ) {
+
+  $confirm = $_POST["confirm"];
+  $emailRst = $_POST["reset"];
+  
+  $update = "UPDATE users
+  SET password = '$confirm'
+  WHERE email = '$emailRst'";
+
+  echo $confirm;
+  echo $emailRst;
+
+
+$conn->query($update); 
+
 }
 ?>

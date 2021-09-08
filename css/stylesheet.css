@@ -46,3 +46,6 @@ label {
 .forgotBtns {
   text-align: -webkit-center;
 }
+body {
+  background-size: cover;
+}
