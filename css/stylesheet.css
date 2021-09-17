@@ -3,8 +3,10 @@ img.avatar {
   margin-bottom: 10px;
 }
 .userName {
-  margin-bottom: 10px;
-  text-align: -webkit-right;
+  text-align: center;
+}
+.container {
+  text-align: center;
 }
 .passWord {
   text-align: -webkit-right;
@@ -48,4 +50,7 @@ label {
 }
 body {
   background-size: cover;
+}
+.bgimg.w3-display-container.w3-animate-opacity.w3-text-white {
+  text-align-last: center;
 }

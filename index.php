@@ -75,7 +75,6 @@ if ( isset( $_POST['signUpbtn'] ) ) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
           header("Location: signin.php");
-          exit();
         }
     } else {
       echo "Invalid user or password";
@@ -86,6 +85,8 @@ if ( isset( $_POST['signUpbtn'] ) ) {
     session_start(); 
     $_SESSION["email"] = "$email";
     $_SESSION["psw"] = "$loginPassword";
+    echo $_SESSION["email"];
+    die()
 
 
 ?>

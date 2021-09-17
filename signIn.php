@@ -1,6 +1,6 @@
 <?php
  session_start(); 
- $_SESSION["email"] = "$email";
+ $ses = $_SESSION["email"] = "$email";
  $_SESSION["psw"] = "$loginPassword";
     
  include ("connect.php");
@@ -43,6 +43,7 @@
   </div>
   <div>
       <button type="submit" name="submitSearch">Confirm</button>
+      <button type="button" name="sort">Sort</button>
   </div>
     </div>
     </form>
@@ -78,7 +79,19 @@ if ( isset( $_POST['submitSearch'] ) ) {
 ?>
 <?php
 
-  $usr = "SELECT email, role FROM  users WHERE = '$email'";
+  $usr = "SELECT * FROM  users WHERE email = 'cornellmyburgh@outlook.com'";
+
+  $result = $conn->query($usr);
+  if ($result->num_rows > 0) {
+      // output data of each row
+      while($row = $result->fetch_assoc()) {
+        echo $row['role'];
+      
+      }
+  }
+  $conn->close();
+  die();
+
 
   if($usr == "member"){
     echo "hello world";
@@ -88,4 +101,8 @@ if ( isset( $_POST['submitSearch'] ) ) {
     echo "hello admin";
   }
 
+?>
+<?php
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+krsort($age);
 ?>

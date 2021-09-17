@@ -22,7 +22,6 @@
   if (isset($_POST["submitBtn"])){
     $email = $_POST["email"];
     $passWord = $_POST["password"];
-    $userName = $_POST["userName"];
 
     // Check connection
     if ($conn->connect_error) {
@@ -36,11 +35,11 @@
 <?php
     if (isset($_POST["submitBtn"])){
       if($passWord == "das123"){
-        $sql = "INSERT INTO users (Email, Password, role) VALUES ('$email', '$passWord', 'admin')";
+        $sql = "INSERT INTO users (email, password, role) VALUES ('$email', '$passWord', 'admin')";
         $conn->query($sql); 
       }
       else{
-        $sql = "INSERT INTO users (Email, Password, role) VALUES ('$email', '$passWord', 'member')";
+        $sql = "INSERT INTO users (email, password, role) VALUES ('$email', '$passWord', 'member')";
         $conn->query($sql); 
       }
     }
