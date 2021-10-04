@@ -54,3 +54,6 @@ body {
 .bgimg.w3-display-container.w3-animate-opacity.w3-text-white {
   text-align-last: center;
 }
+form.w3-container.w3-card-4.w3-padding-16.w3-white {
+  -webkit-user-modify: read-only;
+}

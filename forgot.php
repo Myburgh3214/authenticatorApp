@@ -2,9 +2,10 @@
   include ("connect.php")
   ?>
 <head>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-  <link rel="stylesheet" href="css/stylesheet.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/stylesheet.css">
 </head>
 
 <style>
@@ -14,6 +15,15 @@
       background-image: url(images/libraryImage.jpg);
   }
 </style>
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="index.php" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+    <a href="update.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Sign Up</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Forgot Password</a>
+ </div>
+</div>
 
 <form action="forgot.php" method="POST">
   <div class="container">
