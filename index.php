@@ -57,7 +57,7 @@ body, html {height: 100%}
   <form action="forgot.php" method="POST">
     <button type="submit">Forgot Password</button>
   </form>
-  <form action="update.php" method="POST">
+  <form action="signUplog.php" method="POST">
     <button type="submit">Sign Up</button>
   </form>
   

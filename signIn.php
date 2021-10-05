@@ -7,7 +7,7 @@ include ("connect.php");
 ?>
 <?php
  $usr = "SELECT * FROM  users WHERE email = '$ses'";
-
+echo $usr;
  $result = $conn->query($usr);
  if ($result->num_rows > 0) {
      // output data of each row

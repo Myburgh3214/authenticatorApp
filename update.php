@@ -1,5 +1,5 @@
 <?php
-  include ("connect.php");
+session_start();
 ?>
 <head>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -52,11 +52,17 @@
   </div>
     </div>
 </form>
+<?php
+
+?>
   <?php
    
   if (isset($_POST["submitBtn"])){
     $email = $_POST["email"];
     $passWord = $_POST["password"];
+   
+
+
 
     // Check connection
     if ($conn->connect_error) {
