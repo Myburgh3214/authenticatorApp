@@ -94,7 +94,7 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
       if($row['role'] == "librarian"){
-        header("Location: update.php");
+        header("Location: forgot.php");
       
        
 
