@@ -27,7 +27,7 @@
     <div class="w3-bar w3-theme-d2 w3-left-align">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
       <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
-      <a href="signUplog.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Sign Up</a>
+      <a href="signUplog.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Librarian Menu</a>
       <a href="forgot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Forgot Password</a>
   </div>
   </div>
@@ -59,10 +59,6 @@
 
   <form action="forgotLog.php" method="POST">
     <button type="submit">Forgot Password</button>
-  </form>
-
-  <form action="signUplog.php" method="POST">
-    <button type="submit">Sign Up</button>
   </form>
   
 </div>
