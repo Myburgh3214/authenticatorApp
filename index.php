@@ -27,7 +27,7 @@
     <div class="w3-bar w3-theme-d2 w3-left-align">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
       <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
-      <a href="update.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Sign Up</a>
+      <a href="signUplog.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Sign Up</a>
       <a href="forgot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Forgot Password</a>
   </div>
   </div>
@@ -35,7 +35,7 @@
     <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
     <div class="w3-display-middle" name="hidden">
 
-      <h2><b>Login Form:</b></h2>
+      <h2 class="loginForm"><b>Login Form:</b></h2>
   
     <form action="index.php" method="POST">
       <div class="imgcontainer">
@@ -50,18 +50,17 @@
 
     <div class="passWord">
       <label for="passWord"><h4><b>Password:</b></h4></label>
-      <input type="password" placeholder="Enter Password" name="psw">
+      <input type="text" placeholder="Enter Password" name="psw">
     </div>
 
-    <div>   
       <button type="submit" name="login">Login</button>
     </div>
-
   </form>
 
   <form action="forgotLog.php" method="POST">
     <button type="submit">Forgot Password</button>
   </form>
+
   <form action="signUplog.php" method="POST">
     <button type="submit">Sign Up</button>
   </form>
@@ -78,14 +77,11 @@
 
 <?php
   if ( isset( $_POST['login'] ) ) { 
-
-
-
     $email = $_POST["email"];
     $loginPassword = $_POST["psw"];
-
     $sqlTargets = "SELECT Email FROM users WHERE Email = '$email' AND Password = '$loginPassword' ";
     $result = $conn->query($sqlTargets);
+
     if ($result->num_rows > 0) {
           // output data of each row
           while($row = $result->fetch_assoc()) {
@@ -100,6 +96,5 @@
   
     session_start(); 
      $_SESSION['email'] = "$email";
-
 
 ?>
