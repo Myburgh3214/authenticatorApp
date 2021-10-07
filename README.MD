@@ -7,7 +7,7 @@
 
 <h2>In order for the librarians to create new accounts using the "Librarian Menu". Once clicked on this menu will appear.
 <br>
-<img src="images/librarianDemo" alt="Demo">.
+<img src="images/librarianDemo.png" alt="Demo">.
 <br>
 <h2>Librians need to login with their special password in order to create accounts.After that a similiar menu will appear and after the details have been filled in the new account will be add to the database.</h2>
 <br>
